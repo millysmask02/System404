@@ -56,10 +56,20 @@ int main() {
 	Lesson p2 = { MyGroup1, Masha, Object::History, 102 };
 	Lesson p3 = { MyGroup1, Masha, Object::Math, 103 };
 
+
+
 	Schedule sch;
 	sch.addLesson(p1, 1, 1);
 	sch.addLesson(p2, 1, 2);
 	sch.addLesson(p3, 1, 3);
+
+	auto rasp = sch.getSchedule();
+	for (auto day : rasp) {
+		for (auto les : day) {
+			std::cout << les.value().room << std::endl;
+		}
+		std::cout << std::endl;
+	}
 }
 // 1 группа - Тихон
 // 4 группа - Вася
